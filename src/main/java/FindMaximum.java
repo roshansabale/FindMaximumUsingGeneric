@@ -26,4 +26,26 @@ public class FindMaximum {
         }
         return maximum;
     }
+
+    public String findIntegerMaximum(String number1,String number2,String number3) {
+        //String maximum=number1;
+
+        /*if(number1.compareTo(number2) > 0) {
+            maximum = number1;
+        } else if (number2.compareTo(number3) > 0) {
+            maximum =number2;
+        } else if (number3.compareTo(number1) > 0)
+        {
+            maximum = number3;
+        }
+        return maximum;*/
+        String maximum=number1;
+        if (number2.compareTo(maximum) > 0) {
+            maximum = number2;
+        }
+        if (number3.compareTo(maximum) > 0) {
+            maximum = number3;
+        }
+        return maximum;
+    }
 }

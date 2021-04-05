@@ -8,8 +8,12 @@ public class FindMaximumTest {
     Float floatNumber1;
     Float floatNumber2;
     Float floatNumber3;
+    String string1;
+    String string2;
+    String string3;
     Integer integerMaximum;
     Float   floatMaximum;
+    String stringMaximum;
 
     FindMaximum findMaximum = new FindMaximum();
     //UC1.1 1st position
@@ -22,7 +26,7 @@ public class FindMaximumTest {
         Assert.assertEquals(number1,integerMaximum);
         System.out.println("Maximum at 1rd position Number is:"+integerMaximum);
     }
-    //UC1.2 1st position
+    //UC1.2 2nd position
     @Test
     void findMaximumNumber_WhenAtPosition2_ThenReturnNumber2() {
         number1 = 5;
@@ -32,7 +36,7 @@ public class FindMaximumTest {
         Assert.assertEquals(number2,integerMaximum);
         System.out.println("Maximum at 2nd position Number is:"+integerMaximum);
     }
-    //UC1.3 1st position
+    //UC1.3 3rd position
     @Test
     void findMaximumNumber_WhenAtPosition3_ThenReturnNumber3() {
         number1 = 10;
@@ -43,6 +47,7 @@ public class FindMaximumTest {
         System.out.println("Maximum at 3rd position Number is:"+integerMaximum);
     }
 
+    //2.1 1st position
     @Test
     void findMaximumFloatNumber_WhenAtPosition1_ThenReturnNumber1() {
         floatNumber1 = 2.0f;
@@ -52,7 +57,7 @@ public class FindMaximumTest {
         Assert.assertEquals(floatNumber1,floatMaximum);
         System.out.println("Maximum at 1st position Number is:"+floatMaximum);
     }
-
+    //2.1 2nd position
     @Test
     void findMaximumFloatNumber_WhenAtPosition2_ThenReturnNumber2() {
         floatNumber1 = 2.0f;
@@ -62,7 +67,7 @@ public class FindMaximumTest {
         Assert.assertEquals(floatNumber2,floatMaximum);
         System.out.println("Maximum at 2nd position Number is:"+floatMaximum);
     }
-
+    //2.1 3rd position
     @Test
     void findMaximumFloatNumber_WhenAtPosition3_ThenReturnNumber3() {
         floatNumber1 = 2.0f;
@@ -71,6 +76,37 @@ public class FindMaximumTest {
         floatMaximum = findMaximum.findIntegerMaximum(floatNumber1,floatNumber2,floatNumber3);
         Assert.assertEquals(floatNumber3,floatMaximum);
         System.out.println("Maximum at 3rd position Number is:"+floatMaximum);
+    }
+
+    //3.1 1st position and here comparison of string are base on Unicode
+    @Test
+    void findMaximumString_WhenAtPosition1_ThenReturnString1() {
+        string1 = "Peach";
+        string2 = "Banana";
+        string3 = "Apple";
+        stringMaximum = findMaximum.findIntegerMaximum(string1,string2,string3);
+        Assert.assertEquals(string1,stringMaximum);
+        System.out.println("Maximum at 1st position string is:"+stringMaximum);
+    }
+    //3.2 2nd position and here comparison of string are base on Unicode
+    @Test
+    void findMaximumString_WhenAtPosition2_ThenReturnString2() {
+        string1 = "Banana";
+        string2 = "Peach";
+        string3 = "Apple";
+        stringMaximum = findMaximum.findIntegerMaximum(string1,string2,string3);
+        Assert.assertEquals(string2,stringMaximum);
+        System.out.println("Maximum at 2nd position string is:"+stringMaximum);
+    }
+    //3.3 3rd position and here comparison of string are base on Unicode
+    @Test
+    void findMaximumString_WhenAtPosition3_ThenReturnString3() {
+        string1 = "Banana";
+        string2 = "Apple";
+        string3 = "Peach";
+        stringMaximum = findMaximum.findIntegerMaximum(string1,string2,string3);
+        Assert.assertEquals(string3,stringMaximum);
+        System.out.println("Maximum at 3rd position string is:"+stringMaximum);
     }
 
 }
