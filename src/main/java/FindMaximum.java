@@ -12,4 +12,18 @@ public class FindMaximum {
         }
         return maximum;
     }
+
+    public Float findIntegerMaximum(Float number1,Float number2,Float number3) {
+        Float maximum=number1;
+
+        if(number1.compareTo(number2) > 0) {
+            maximum = number1;
+        } else if (number2.compareTo(number3) > 0) {
+            maximum =number2;
+        } else if (number3.compareTo(number1) > 0)
+        {
+            maximum = number3;
+        }
+        return maximum;
+    }
 }
