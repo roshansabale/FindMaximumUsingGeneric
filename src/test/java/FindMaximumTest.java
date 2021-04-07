@@ -120,4 +120,51 @@ public class FindMaximumTest {
         number3 = 30;
         Assert.assertEquals(number3,new FindMaximum<Integer>(number1,number2,number3).testMaximum());
     }
+
+    @Test
+    void givenMaximumFloatNumberThroghConstructor_WhenAtPosition1_ThenReturnMaxNumber1() {
+        floatNumber1 = 3.0f;
+        floatNumber2 = 2.0f;
+        floatNumber3 = 1.0f;
+        Assert.assertEquals(floatNumber1,new FindMaximum<Float>(floatNumber1,floatNumber2,floatNumber3).testMaximum());
+    }
+    @Test
+    void givenMaximumFloatNumberThroghConstructor_WhenAtPosition2_ThenReturnMaxNumber2() {
+        floatNumber1 = 2.0f;
+        floatNumber2 = 3.0f;
+        floatNumber3 = 1.0f;
+        Assert.assertEquals(floatNumber2,new FindMaximum<Float>(floatNumber1,floatNumber2,floatNumber3).testMaximum());
+    }
+    @Test
+    void givenMaximumFloatNumberThroghConstructor_WhenAtPosition3_ThenReturnMaxNumber3() {
+        floatNumber1 = 2.0f;
+        floatNumber2 = 1.0f;
+        floatNumber3 = 3.0f;
+        Assert.assertEquals(floatNumber3,new FindMaximum<Float>(floatNumber1,floatNumber2,floatNumber3).testMaximum());
+    }
+
+    @Test
+    void givenMaximumStringThroghConstructor_WhenAtPosition1_ThenReturnString1() {
+        string1 = "Peach";
+        string2 = "Banana";
+        string3 = "Apple";
+        Assert.assertEquals(string1,new FindMaximum<String>(string1,string2,string3).testMaximum());
+    }
+    //3.2 2nd position and here comparison of string are base on Unicode
+    @Test
+    void givenMaximumStringThroghConstructor_WhenAtPosition2_ThenReturnString2() {
+        string1 = "Banana";
+        string2 = "Peach";
+        string3 = "Apple";
+        Assert.assertEquals(string2,new FindMaximum<String>(string1,string2,string3).testMaximum());
+    }
+    //3.3 3rd position and here comparison of string are base on Unicode
+    @Test
+    void givenMaximumStringThroghConstructor_WhenAtPosition3_ThenReturnString3() {
+        string1 = "Banana";
+        string2 = "Apple";
+        string3 = "Peach";
+        Assert.assertEquals(string3,new FindMaximum<String>(string1,string2,string3).testMaximum());
+    }
+
 }

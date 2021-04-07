@@ -1,13 +1,19 @@
 public class FindMaximum <T extends Comparable<T>>{
-
     T values[];
     public FindMaximum(T ...values) {
         this.values=values;
     }
 
     public T testMaximum() {
-        return findMaximum(values);
+        T maximum = findMaximum(values);
+        printMaximum(maximum);
+        return maximum;
     }
+
+    public static <T> void printMaximum(T maximum) {
+        System.out.println("Maximum Number is:"+ maximum);
+    }
+
     public static <T extends Comparable<T>> T findMaximum(T... values) {
         T maximum  = values[0];   // assume x is initially the largest
 
@@ -16,6 +22,7 @@ public class FindMaximum <T extends Comparable<T>>{
                 maximum = values[i];
             }
         }
+       // printMaximum(maximum);
         return  maximum;
     }
 }
