@@ -1,15 +1,21 @@
-public class FindMaximum {
+public class FindMaximum <T extends Comparable<T>>{
 
-    public static <T extends Comparable<T>> T findMaximum(T number1, T number2, T number3) {
-        T maximum = number1;   // assume x is initially the largest
+    T values[];
+    public FindMaximum(T ...values) {
+        this.values=values;
+    }
 
-        if (number1.compareTo(number2) > 0) {
-            maximum = number1;
-        } else if (number2.compareTo(number3) > 0) {
-            maximum = number2;
-        } else if (number3.compareTo(number1) > 0) {
-            maximum = number3;
+    public T testMaximum() {
+        return findMaximum(values);
+    }
+    public static <T extends Comparable<T>> T findMaximum(T... values) {
+        T maximum  = values[0];   // assume x is initially the largest
+
+        for(int i = 1; i < values.length; i++) {
+            if (maximum.compareTo(values[i]) < 0) {
+                maximum = values[i];
+            }
         }
-        return maximum;
+        return  maximum;
     }
 }
